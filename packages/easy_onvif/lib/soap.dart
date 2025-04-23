@@ -10,6 +10,7 @@ export 'src/soap/mtom.dart';
 export 'src/soap/nonce.dart';
 export 'src/soap/ptz.dart';
 export 'src/soap/recordings.dart';
+export 'src/soap/events.dart';
 export 'src/soap/replay.dart';
 export 'src/soap/search.dart';
 export 'src/soap/transport.dart';

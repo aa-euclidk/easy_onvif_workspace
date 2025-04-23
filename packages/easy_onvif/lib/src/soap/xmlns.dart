@@ -12,6 +12,7 @@ class Xmlns {
   static const trc = 'http://www.onvif.org/ver10/recording/wsdl';
   static const trp = 'http://www.onvif.org/ver10/replay/wsdl';
   static const tse = 'http://www.onvif.org/ver10/search/wsdl';
+  static const tev = 'http://www.onvif.org/ver10/events/wsdl';
   static const tt = 'http://www.onvif.org/ver10/schema';
   static const ws = 'http://schemas.xmlsoap.org/ws/2005/04/discovery';
   static const xsd = 'http://www.w3.org/2001/XMLSchema';

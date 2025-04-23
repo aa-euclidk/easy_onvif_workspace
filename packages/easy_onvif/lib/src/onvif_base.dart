@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:easy_onvif/soap.dart' as soap;
+import 'package:easy_onvif/src/events.dart';
 import 'package:easy_onvif/util.dart';
 import 'package:loggy/loggy.dart';
 
@@ -37,6 +38,7 @@ class Onvif with UiLoggy {
   Recordings? _recordings;
   Replay? _replay;
   Search? _search;
+  Events? _events;
 
   soap.Transport get transport =>
       _transport ??
@@ -62,6 +64,9 @@ class Onvif with UiLoggy {
 
   Search get search =>
       _search ?? (throw Exception('Search services not available'));
+
+  Events get events =>
+      _events ?? (throw Exception('Events services not available'));
 
   Onvif({
     required this.authInfo,
@@ -209,6 +214,13 @@ class Onvif with UiLoggy {
         _search = Search(
           transport: transport,
           uri: _serviceUriOfHost(serviceMap[soap.Xmlns.tse]!),
+        );
+      }
+
+      if (serviceMap.containsKey(soap.Xmlns.tev)) {
+        _events = Events(
+          transport: transport,
+          uri: _serviceUriOfHost(serviceMap[soap.Xmlns.tev]!),
         );
       }
 
